@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scss": "sass --watch resources/scss/app.scss:public/css/app.css"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,11 @@
   "dependencies": {
     "angular": "^1.8.2",
     "angular-route": "^1.8.2",
+    "angular-ui-bootstrap": "^2.5.6",
     "angular-ui-router": "^1.0.30",
-    "install": "^0.13.0"
+    "sass": "^1.45.0"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.0"
   }
 }

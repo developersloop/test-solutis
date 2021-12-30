@@ -1,0 +1,56 @@
+.card-login > .form-group {
+  width: 100%;
+}
+.card-login > .form-group > .form-item > .email, .card-login > .form-group > .form-item > .password {
+  width: -webkit-fill-available;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+}
+.card-login > .form-group > .form-item > .password {
+  margin-top: 20px;
+}
+.card-login > .form-group > .form-item > .btn {
+  width: 100%;
+  margin-top: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+.card-login > .form-group > .form-item > .btn.-primary {
+  background: blue;
+}
+.card-login > .form-group > .form-item > .btn.-medium {
+  padding: 10px;
+}
+
+@media (min-width: 568px) and (max-width: 768px) {
+  .container {
+    max-width: 50vh;
+    margin: auto;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 66vh;
+    margin: auto;
+  }
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: inherit;
+  padding: 0 20px;
+}
+
+/*# sourceMappingURL=app.css.map */

@@ -1,15 +1,13 @@
-<div ng-controller="Login.LoginController">
-	<table>
-		<thead>
-			<tr>
-				<th>{{ vm.name }}</th>
-				<th>Quantidade</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>{{ itens }}</td>
-			</tr>
-		</tbody>
-	</table>
+<div class="card-login" ng-controller="Login.LoginController">
+	<div class="form-group">
+		<div class="form-item">
+			<input class="email" type="text" name="email" placeholder="Digite seu e-mail." />
+		</div>
+		<div class="form-item">
+			<input class="password" type="text" name="password" placeholder="Digite sua senha."/>
+		</div>
+		<div class="form-item">
+			<button class="btn -primary -medium">Acessar</button>
+		</div>
+	</div>
 </div>
