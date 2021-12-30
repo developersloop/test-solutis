@@ -1,0 +1,25 @@
+{
+  "name": "test-solutis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developersloop/test-solutis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/developersloop/test-solutis/issues"
+  },
+  "homepage": "https://github.com/developersloop/test-solutis#readme",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "angular-ui-router": "^1.0.30",
+    "install": "^0.13.0"
+  }
+}
