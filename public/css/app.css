@@ -29,14 +29,14 @@
 }
 
 @media (min-width: 568px) and (max-width: 768px) {
-  .container {
-    max-width: 50vh;
+  .card-login {
+    max-width: 55vh;
     margin: auto;
   }
 }
-@media (min-width: 768px) {
-  .container {
-    max-width: 66vh;
+@media (min-width: 769px) {
+  .card-login {
+    max-width: 60vh;
     margin: auto;
   }
 }
