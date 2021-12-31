@@ -39,7 +39,12 @@
 
 		function beforeEnter($state,$q) {
 			var deferred = $q.defer();
-			if(localStorage.getItem('token') !== null) {
+
+			const ts = localStorage.getItem('ts')
+			const apiKey = localStorage.getItem('apiKey')
+			const hash = localStorage.getItem('hash')
+			
+			if(ts && apiKey && hash) {
 					deferred.resolve();
 			} else {
 					deferred.reject();
