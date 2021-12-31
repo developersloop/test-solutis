@@ -8,15 +8,21 @@
 			border-radius: 3px;
 		} 
 	}
+	> .loader {
+		margin-top: 20px;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+	}
 	> .list-heroes {
 		margin-top: 20px;
 		width: 100%;
 		display: flex;
 		flex-flow: row wrap;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		> .card {
-			margin-bottom: 20px;
-			width: 131px;
+			margin-bottom: 40px;
+			width: 150px;
 			height: 131px;
 			display: flex;
 			flex-direction: column;
@@ -52,5 +58,18 @@
 	> .list-heroes.-scroll {
 		max-height: 50vh;
 		overflow-y: scroll;
+	}
+}
+
+@media(min-width: 768px) {
+	.comic-book {
+		width: 60vw;
+		margin: auto;
+		> .search-heroes {
+			width: 150px;
+		}
+		.list-heroes {
+			justify-content: space-between;
+		}
 	}
 }
