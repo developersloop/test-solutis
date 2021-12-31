@@ -8,4 +8,49 @@
 			border-radius: 3px;
 		} 
 	}
+	> .list-heroes {
+		margin-top: 20px;
+		width: 100%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+		> .card {
+			margin-bottom: 20px;
+			width: 131px;
+			height: 131px;
+			display: flex;
+			flex-direction: column;
+			> .card-header {
+				> .thumbnail {
+					> .image.-rounded {
+						border-radius: 4px;
+					}
+				}
+			}
+			> .card-body {
+				display: flex;
+				flex-flow: column;
+				justify-content: end;
+				text-align: center;
+				> .text {
+					margin-top: -35px;
+					padding-bottom: 7px;
+					color: white;
+					text-align: inherit;
+					font-size: 21px;
+					letter-spacing: 1px;
+					font-weight: bold;
+				}
+				> .text.-ellipsis {
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+	> .list-heroes.-scroll {
+		max-height: 50vh;
+		overflow-y: scroll;
+	}
 }
