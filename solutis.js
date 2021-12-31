@@ -1,11 +1,19 @@
 (function () {
 	'use strict';
+	var env = {}; if(window){ Object.assign(env, window.__env); }
 
 	angular
 		.module('solutis',[
 			'ui.router',
 			'ui.bootstrap',
 		])
+		.constant('API_SERVICE', {
+			__env: env,
+			base_path: env.apiUrl,
+			ts: env.ts,
+			apiKey: env.apiKey,
+			hash: env.hash
+		})
 		.config(config)
 		
 		function config(
@@ -26,9 +34,11 @@
 				)
 				.state(
 					{
-						name: 'home',
-						url: '/home',
-						template: '<div>home</div>',
+						name: 'heroes',
+						url: '/heroes',
+						templateUrl: 'app/components/heroes/heroes.view.html',
+						controller: 'Heroes.HeroesController',
+						controllerAs: 'vm',
 						resolve: {
 							beforeEnter,
 						}

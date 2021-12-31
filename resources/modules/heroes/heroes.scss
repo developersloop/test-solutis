@@ -1,0 +1,11 @@
+.comic-book {
+	> .search-heroes {
+		width: 100%;
+		> .search {
+			width: -webkit-fill-available;
+			padding: 8px;
+			border: 1px solid #ced4da;
+			border-radius: 3px;
+		} 
+	}
+}
