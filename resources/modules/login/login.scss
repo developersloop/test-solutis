@@ -1,33 +1,44 @@
 .card-login {
-	> .form-group {
-		width: 100%;
-		> .form-item {
-			> .email {
-				width: -webkit-fill-available;
-				padding: 8px;
-				border: 1px solid #ced4da;
-				border-radius: 3px;
-			}
-			> .password {
-				@extend .email;
-				margin-top: 20px;
-			}
-			> .btn {
-				width: 100%;
-				margin-top: 20px;
-				font-weight: bold;
-				line-height: 1.5;
-				color: #fff;
-				cursor: pointer;
-				border: 1px solid transparent;
-				font-size: 1rem;
-				border-radius: 0.25rem;
-			}
-			> .btn.-primary {
-				background: blue;
-			}
-			> .btn.-medium {
-				padding: 10px;
+	> .form-login {
+		> .form-group {
+			width: 100%;
+			> .form-item {
+				> .email {
+					width: -webkit-fill-available;
+					padding: 8px;
+					border: 1px solid #ced4da;
+					border-radius: 3px;
+				}
+				> .password {
+					@extend .email;
+					margin-top: 20px;
+				}
+				> .error-message {
+					color: red;
+					font-size: 13px;
+					font-weight: bold;
+				}
+				> .btn {
+					width: 100%;
+					margin-top: 20px;
+					font-weight: bold;
+					line-height: 1.5;
+					color: #fff;
+					cursor: pointer;
+					border: 1px solid transparent;
+					font-size: 1rem;
+					border-radius: 0.25rem;
+				}
+				> .btn.-primary {
+					background: blue;
+				}
+				> .btn.-medium {
+					padding: 10px;
+				}
+				> .btn.-disabled {
+					opacity: 0.2;
+					pointer-events: none;
+				}
 			}
 		}
 	}

@@ -1,16 +1,21 @@
-.card-login > .form-group {
+.card-login > .form-login > .form-group {
   width: 100%;
 }
-.card-login > .form-group > .form-item > .email, .card-login > .form-group > .form-item > .password {
+.card-login > .form-login > .form-group > .form-item > .email, .card-login > .form-login > .form-group > .form-item > .password {
   width: -webkit-fill-available;
   padding: 8px;
   border: 1px solid #ced4da;
   border-radius: 3px;
 }
-.card-login > .form-group > .form-item > .password {
+.card-login > .form-login > .form-group > .form-item > .password {
   margin-top: 20px;
 }
-.card-login > .form-group > .form-item > .btn {
+.card-login > .form-login > .form-group > .form-item > .error-message {
+  color: red;
+  font-size: 13px;
+  font-weight: bold;
+}
+.card-login > .form-login > .form-group > .form-item > .btn {
   width: 100%;
   margin-top: 20px;
   font-weight: bold;
@@ -21,11 +26,15 @@
   font-size: 1rem;
   border-radius: 0.25rem;
 }
-.card-login > .form-group > .form-item > .btn.-primary {
+.card-login > .form-login > .form-group > .form-item > .btn.-primary {
   background: blue;
 }
-.card-login > .form-group > .form-item > .btn.-medium {
+.card-login > .form-login > .form-group > .form-item > .btn.-medium {
   padding: 10px;
+}
+.card-login > .form-login > .form-group > .form-item > .btn.-disabled {
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 @media (min-width: 568px) and (max-width: 768px) {
