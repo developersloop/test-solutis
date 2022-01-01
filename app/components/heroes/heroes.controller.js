@@ -10,10 +10,16 @@
 		marvelService
 	) 
 	{
+		$scope.search = null
+
 		var vm = this
 		vm.heroes = []
 		vm.loading = false
 
+		$scope.customFilter = function(value) {
+			if ($scope.search) return value.name.toLowerCase().includes($scope.search.toLowerCase());
+			return value
+		}
 		function getHeroes() {
 			vm.loading = true
 			marvelService.characters()

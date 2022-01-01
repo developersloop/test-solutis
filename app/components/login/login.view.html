@@ -1,13 +1,24 @@
 <div class="card-login" ng-controller="Login.LoginController">
-	<div class="form-group">
-		<div class="form-item">
-			<input class="email" type="text" name="email" placeholder="Digite seu e-mail." />
+	<form class="form-login" name="login">
+		<div class="form-group">
+			<div class="form-item">
+				<input 
+					class="email" 
+					type="text" 
+					name="email" 
+					ng-model="email"
+					ng-model-options="{ debounce: 1000 }"
+					placeholder="Digite seu e-mail." 
+					ng-pattern="regexEmail"
+				/>
+				<span ng-show="login.email.$error.pattern" class="error-message">Digite um e-mail válido</span>
+			</div>
+			<div class="form-item">
+				<input class="password" type="text" name="password" ng-model="password" placeholder="Digite sua senha." required/>
+			</div>
+			<div class="form-item" ng-disabled="login.email.$invalid || login.password.$error.required">
+				<button class="btn -primary -medium" ng-class="{'-disabled': login.email.$invalid || login.password.$error.required }" ng-click="loguin()">Acessar</button>
+			</div>
 		</div>
-		<div class="form-item">
-			<input class="password" type="text" name="password" placeholder="Digite sua senha."/>
-		</div>
-		<div class="form-item">
-			<button class="btn -primary -medium" ng-click="login()">Acessar</button>
-		</div>
-	</div>
+	</form>
 </div>
