@@ -7,6 +7,6 @@ var serveStatic = require('serve-static');
 app.use(serveStatic('.', {'index': ['index.html']}));
 
 // Listen on port 3000
-http.listen(3000, function(){
+http.listen(process.env.PORT || 5000, function(){
   console.log('listening on 0.0.0.0:3000');
 });
