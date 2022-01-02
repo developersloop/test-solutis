@@ -7,7 +7,7 @@
 			const apiService = {}
 
 			apiService.characters = function () {
-				return $http.get(`${API_SERVICE.base_path}/characters?limit=10&ts=${API_SERVICE.ts}&apikey=${API_SERVICE.apiKey}&hash=${API_SERVICE.hash}`)
+				return $http.get(`${API_SERVICE.base_path}/characters?limit=20&ts=${API_SERVICE.ts}&apikey=${API_SERVICE.apiKey}&hash=${API_SERVICE.hash}`)
 			}
 
 			apiService.character = function (characterId) {
