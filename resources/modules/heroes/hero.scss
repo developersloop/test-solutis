@@ -1,0 +1,147 @@
+.marvel-hero {
+	> .loader {
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+	}
+	> .hero-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		> .hero-head {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			> .hero-informations {
+				padding: 20px;
+				width: 165px;
+				> .info.-ellipsis {
+						text-overflow: ellipsis;
+						overflow: hidden;
+						white-space: nowrap;
+					} 
+			}
+			> .image-hero {
+				> .image {
+					width:200px; 
+					height:200px;
+				}
+				> .image.-rounded {
+					border-radius: 6px;
+				}
+			}
+		}
+		> .hero-body {
+			> .title {
+				text-align: center;
+				font-size: 20px;
+				font-weight: bold;
+				color: white;
+			}
+			> .subtitle {
+				@extend .title;
+				margin-top: 36px;
+				color: #6f42c1;
+				font-weight: 600;
+				&::after {
+					display:block;
+					content: '';
+					border: 2.4px solid #6f42c1;
+					margin: auto;
+					width: 154px;
+				}
+			}
+			> .list-comics {
+				margin-top: 20px;
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-evenly;
+				> .card {
+					cursor: pointer;
+					display: flex;
+					flex-direction: column;
+					> .card-header {
+						> .thumbnail {
+							> .image.-rounded {
+								border-radius: 4px;
+							}
+						}
+					}
+					> .card-body {
+						display: flex;
+						flex-flow: column;
+						justify-content: end;
+						text-align: center;
+						> .text {
+							margin-top: -35px;
+							padding-bottom: 7px;
+							color: white;
+							text-align: inherit;
+							font-size: 21px;
+							letter-spacing: 1px;
+							font-weight: bold;
+						}
+						> .text.-ellipsis {
+							text-overflow: ellipsis;
+							overflow: hidden;
+							white-space: nowrap;
+						}
+					}
+				}
+			}
+			> .list-comics.-scroll {
+				max-height: 50vh;
+				overflow-y: scroll;
+			}
+		}
+	}
+}
+
+@media(max-width: 767.92px) {
+	.marvel-hero {
+		> .hero-content {
+			> .hero-head {
+				> .hero-informations {
+					display: none;
+				}
+			}
+		}
+	}
+}
+@media(min-width: 768px) {
+	.marvel-hero {
+		> .hero-content {
+			> .hero-head {
+				margin-top: 50px;
+			}
+			> .hero-body {
+				margin-top: 0;
+				> .list-comics {
+					padding-top: 20px;
+					max-width: 57vw;
+					margin: auto;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 992px) { 
+	.marvel-hero {
+		> .hero-content {
+			> .hero-head {
+				> .hero-informations {
+					width: auto;
+				}
+				margin-left: 69px;
+			}
+			> .hero-body {
+				margin-top: 0;
+				> .list-comics {
+					padding-top: 20px;
+					max-width: 47vw;
+					margin: auto;
+				}
+			}
+		}
+	}
+}

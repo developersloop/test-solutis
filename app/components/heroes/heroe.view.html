@@ -1,0 +1,28 @@
+<div class="marvel-hero" ng-controller="Heroes.HeroesController">
+	<div class="loader" ng-if="!character">...Carregar dados</div>
+	<div class="hero-content" ng-if="character">
+		<div class="hero-head">
+			<div class="image-hero">
+				<img class="image -rounded" src="https://ogimg.infoglobo.com.br/in/25320231-3fa-ec0/FT1086A/33973739_Marvels-AvengersAge-Of-UltronHulk-Bruce-Banner-Mark-RuffaloPhFilm-FrameMarvel.jpg"/>
+			</div>
+			<div class="hero-informations -web">
+				<p class="info -ellipsis">id: <b>{{ character.id }}</b></p>
+				<p class="info -ellipsis">Nome: <b>{{ character.name }}</b></p>
+				<p class="info -ellipsis">Descrição: <b>{{ character.description }}</b></p>
+				<p class="info -ellipsis">Atribuição: <b>Data provided by Marvel. © 2022 MARVEL</b></p>
+			</div>
+		</div>
+		<div class="hero-body">
+			<div class="subtitle comic">Quadrinhos</div>
+			<div class="list-comics -scroll">
+				<div class="card" ng-repeat="comic in character.comics.items">
+					<div class="card-header">
+						<div class="thumbnail">
+							<img class="image -rounded" src="https://ogimg.infoglobo.com.br/in/25320231-3fa-ec0/FT1086A/33973739_Marvels-AvengersAge-Of-UltronHulk-Bruce-Banner-Mark-RuffaloPhFilm-FrameMarvel.jpg" width="90" height="90" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

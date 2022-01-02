@@ -2,6 +2,7 @@
 	'use strict';
 	var env = {}; if(window){ Object.assign(env, window.__env); }
 
+	let character = []
 	angular
 		.module('solutis',[
 			'ui.router',
@@ -41,6 +42,32 @@
 						controllerAs: 'vm',
 						resolve: {
 							beforeEnter,
+						}
+					}
+				)
+				.state(
+					{
+						name: 'heroe',
+						url: '/heroe/{heroeId}',
+						templateUrl: 'app/components/heroes/heroe.view.html',
+						controller: 'Heroes.HeroesController',
+						controllerAs: 'vm',
+						resolve: {
+							beforeEnter,
+							function($state,$stateParams,marvelService) {
+								if ('params' in $state) {
+									if ('heroeId' in $stateParams) {
+										marvelService
+											.character($stateParams.heroeId)
+											.then(response => {
+												character.push(response.data.data.results[0])
+											})
+									}
+								}
+							}
+						},
+						params: {
+							character,
 						}
 					}
 				)
