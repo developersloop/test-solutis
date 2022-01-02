@@ -21,10 +21,10 @@
 		vm.loading = false
 
 		setTimeout(() => {
-			cleanHeroes()
 			$scope.hero = $stateParams.hero[0]
 			$scope.comics = $stateParams.comics[0]
 			console.log($scope.comics)
+			cleanHeroes()
 		}, 500);
 
 		$scope.customFilter = function(value) {
