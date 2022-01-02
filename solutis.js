@@ -47,8 +47,8 @@
 				)
 				.state(
 					{
-						name: 'heroe',
-						url: '/heroe/{heroeId}',
+						name: 'hero',
+						url: '/hero/{heroeId}',
 						templateUrl: 'app/components/heroes/heroe.view.html',
 						controller: 'Heroes.HeroesController',
 						controllerAs: 'vm',

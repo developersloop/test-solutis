@@ -29,7 +29,7 @@
 			return value
 		}
 		$scope.goTo = function(heroId) {
-			$state.go("heroes", { heroeId: heroId})
+			$state.go("hero", { heroeId: heroId})
 		}
 		function getHeroes() {
 			vm.loading = true
