@@ -4,16 +4,11 @@
 	</div>
 	<div ng-if="vm.loading" class="loader">...Carregar Dados</div>
 	<div class="list-heroes -scroll">
-		<div class="card" ng-repeat="heroe in vm.heroes | filter: customFilter" ng-click="goTo(heroe.id)">
+		<div class="card" ng-repeat="hero in vm.heroes | filter: customFilter" ng-click="goTo(hero.id)">
 			<div class="card-header">
 				<div class="thumbnail">
-					<img class="image -rounded" src="https://ogimg.infoglobo.com.br/in/25320231-3fa-ec0/FT1086A/33973739_Marvels-AvengersAge-Of-UltronHulk-Bruce-Banner-Mark-RuffaloPhFilm-FrameMarvel.jpg" width="150" height="150" />
+					<img class="image -rounded" src="{{hero.thumbnail.path}}.jpg" width="150" height="150" />
 				</div>
-			</div>
-			<div class="card-body">
-				<span class="text -ellipsis">
-					{{ heroe.name }}
-				</span>
 			</div>
 		</div>
 	</div>

@@ -13,15 +13,18 @@
 	) 
 	{
 		$scope.search = null
-		$scope.character = null
+		$scope.hero = null
+		$scope.comics = null
 
 		var vm = this
 		vm.heroes = []
 		vm.loading = false
 
 		setTimeout(() => {
-			$scope.character = $stateParams.character[0]
-			console.log($scope.character)
+			cleanHeroes()
+			$scope.hero = $stateParams.hero[0]
+			$scope.comics = $stateParams.comics[0]
+			console.log($scope.comics)
 		}, 500);
 
 		$scope.customFilter = function(value) {
@@ -38,6 +41,10 @@
 					vm.heroes = [...response.data.data.results]
 				})
 				.finally(() => vm.loading = false)
+		}
+		function cleanHeroes() {
+			$scope.hero = null
+			$scope.comics = null 
 		}
 		
 		getHeroes()

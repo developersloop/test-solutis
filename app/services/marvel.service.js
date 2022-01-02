@@ -13,6 +13,10 @@
 			apiService.character = function (characterId) {
 				return $http.get(`${API_SERVICE.base_path}/characters/${characterId}?limit=10&ts=${API_SERVICE.ts}&apikey=${API_SERVICE.apiKey}&hash=${API_SERVICE.hash}`)
 			}
+
+			apiService.commicCollect = function (characterId) {
+				return $http.get(`${API_SERVICE.base_path}/characters/${characterId}/comics?ts=${API_SERVICE.ts}&apikey=${API_SERVICE.apiKey}&hash=${API_SERVICE.hash}`)
+			}			
 			return apiService
     });
 })();
