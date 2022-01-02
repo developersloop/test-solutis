@@ -24,7 +24,6 @@
 			$scope.hero = $stateParams.hero[0]
 			$scope.comics = $stateParams.comics[0]
 			console.log($scope.comics)
-			cleanHeroes()
 		}, 500);
 
 		$scope.customFilter = function(value) {
@@ -42,11 +41,6 @@
 				})
 				.finally(() => vm.loading = false)
 		}
-		function cleanHeroes() {
-			$scope.hero = null
-			$scope.comics = null 
-		}
-		
 		getHeroes()
 	}
 })()
