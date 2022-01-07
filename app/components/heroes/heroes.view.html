@@ -3,7 +3,7 @@
 		<div class="search-heroes">
 			<input class="search" type="text" name="search" ng-model="search" ng-model-options="{ debounce: 200 }" placeholder="Digite sua busca"/>
 		</div>
-		<div ng-if="vm.loading || (search && vm.loading)" class="loader">...Carregar Dados</div>
+		<div ng-if="vm.loading || results.length === 0 && !search" class="loader">...Carregar Dados</div>
 		<div class="list-heroes -scroll">
 			<div class="card" ng-repeat="hero in heroes as results" ng-click="goTo(hero.id)">
 				<div class="card-header">
@@ -13,6 +13,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="not-found__message" ng-show="results.length === 0 && !vm.loading">Nenhum resultado foi encontrado :(</div>
+		<div class="not-found__message" ng-show="search && (results.length === 0 && !vm.loading)">Nenhum resultado foi encontrado :(</div>
 	</div>
 </div>
