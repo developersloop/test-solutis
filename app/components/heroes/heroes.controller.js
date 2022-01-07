@@ -21,12 +21,12 @@
 		var vm = this
 		vm.loading = false
 
-		setTimeout(() => {
-			if ($stateParams) {
-				$scope.hero = $stateParams.hero[0]
-				$scope.comics = $stateParams.comics[0]
-			}
-		}, 500);
+		// setTimeout(() => {
+		// 	if ($stateParams) {
+		// 		$scope.hero = $stateParams.hero[0]
+		// 		$scope.comics = $stateParams.comics[0]
+		// 	}
+		// }, 500);
 
 		$scope.$watch("search",function(newValue){
 			getHeroes(newValue)
@@ -43,6 +43,21 @@
 				})
 				.finally(() => vm.loading = false)
 		}
-		getHeroes()
+		
+		function fetchHero() {
+			marvelService
+			.character($stateParams.heroeId)
+			.then(response => {
+				$scope.hero = response.data.data.results[0]
+				marvelService.commicCollect($stateParams.heroeId)
+				.then(resp => {
+					$scope.comics = resp.data.data.results
+				})
+			})
+		}
+		$scope.mounted = function() {
+			getHeroes()
+			fetchHero()
+		}
 	}
 })()

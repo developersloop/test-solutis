@@ -1,4 +1,4 @@
-<div class="marvel-hero" ng-controller="Heroes.HeroesController">
+<div class="marvel-hero" ng-controller="Heroes.HeroesController" ng-init="mounted()">
 	<div class="loader" ng-if="!hero">...Carregar dados</div>
 	<div class="hero-content" ng-if="hero">
 		<div class="heroes-hero">

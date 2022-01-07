@@ -2,9 +2,6 @@
 	'use strict';
 	var env = {}; if(window){ Object.assign(env, window.__env); }
 
-	let hero = []
-	let comics = []
-
 	angular
 		.module('solutis',[
 			'ui.router',
@@ -56,26 +53,7 @@
 						controllerAs: 'vm',
 						resolve: {
 							beforeEnter,
-							function($state,$stateParams,marvelService, $http) {
-								if ('params' in $state) {
-									if ('heroeId' in $stateParams) {
-										marvelService
-											.character($stateParams.heroeId)
-											.then(response => {
-												hero.push(response.data.data.results[0])
-												marvelService.commicCollect($stateParams.heroeId)
-												.then(resp => {
-													comics.push(resp.data.data.results)
-												})
-											})
-									}
-								}
-							}
 						},
-						params: {
-							hero,
-							comics,
-						}
 					}
 				)
 				$urlRouterProvider.otherwise("/login");
