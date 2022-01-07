@@ -15,23 +15,25 @@
 		$scope.search = null
 		$scope.hero = null
 		$scope.comics = null
+		$scope.showMessageNotFound = false
 
 		var vm = this
 		vm.heroes = []
 		vm.loading = false
 
 		setTimeout(() => {
-			$scope.hero = $stateParams.hero[0]
-			$scope.comics = $stateParams.comics[0]
-			console.log($scope.comics)
+			if ($stateParams) {
+				$scope.hero = $stateParams.hero[0]
+				$scope.comics = $stateParams.comics[0]
+			}
 		}, 500);
 
 		$scope.customFilter = function(value) {
 			if ($scope.search) return value.name.toLowerCase().includes($scope.search.toLowerCase());
-			return value
+			else return []
 		}
 		$scope.goTo = function(heroId) {
-			$state.go("hero", { heroeId: heroId})
+			$state.go("hero", { heroeId: heroId })
 		}
 		function getHeroes() {
 			vm.loading = true

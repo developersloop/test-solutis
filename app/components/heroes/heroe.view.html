@@ -14,7 +14,10 @@
 				</div>
 			</div>
 			<div class="hero-body">
-				<div class="subtitle comic">Quadrinhos</div>
+				<div class="subtitle">
+					<span class="text">Quadrinhos</span>
+					<a ui-sref="heroes" class="back-router"><i class="bi bi-back"></i> Voltar</a>
+				</div>
 				<div class="loader" ng-if="!comics">...Carregar dados</div>
 				<div class="list-comics -scroll" ng-if="comics.length">
 					<div class="card" ng-repeat="comic in comics">

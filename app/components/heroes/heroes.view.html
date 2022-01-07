@@ -1,15 +1,18 @@
 <div class="comic-book" ng-controller="Heroes.HeroesController">
-	<div class="search-heroes">
-		<input class="search" type="text" name="search" ng-model="search" />
-	</div>
-	<div ng-if="vm.loading" class="loader">...Carregar Dados</div>
-	<div class="list-heroes -scroll">
-		<div class="card" ng-repeat="hero in vm.heroes | filter: customFilter" ng-click="goTo(hero.id)">
-			<div class="card-header">
-				<div class="thumbnail">
-					<img class="image -rounded" src="{{hero.thumbnail.path}}.jpg" width="150" height="150" />
+	<div class="comic-heroes">
+		<div class="search-heroes">
+			<input class="search" type="text" name="search" ng-model="search" />
+		</div>
+		<div ng-if="vm.loading" class="loader">...Carregar Dados</div>
+		<div class="list-heroes -scroll">
+			<div class="card" ng-repeat="hero in vm.heroes | filter: customFilter as results" ng-click="goTo(hero.id)">
+				<div class="card-header">
+					<div class="thumbnail">
+						<img class="image -rounded" src="{{hero.thumbnail.path}}.jpg" width="150" height="150" />
+					</div>
 				</div>
 			</div>
 		</div>
+		<div class="not-found__message" ng-show="results.length == 0 && !vm.loading">Nenhum resultado foi encontrado :(</div>
 	</div>
 </div>

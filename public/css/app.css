@@ -49,45 +49,41 @@
     margin: auto;
   }
 }
-.comic-book > .search-heroes {
-  width: 100%;
-}
-.comic-book > .search-heroes > .search {
-  width: -webkit-fill-available;
+.comic-book > .comic-heroes > .search-heroes > .search {
+  width: fit-content;
   padding: 8px;
   border: 1px solid #ced4da;
   border-radius: 3px;
 }
-.comic-book > .loader {
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
+@media (max-width: 767px) {
+  .comic-book > .comic-heroes > .search-heroes > .search {
+    width: -webkit-fill-available;
+  }
 }
-.comic-book > .list-heroes {
+.comic-book > .comic-heroes > .list-heroes {
   margin-top: 20px;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
-.comic-book > .list-heroes > .card {
-  margin-bottom: 26px;
+.comic-book > .comic-heroes > .list-heroes > .card {
+  padding: 0 4px 28px;
   width: 150px;
   height: 131px;
   display: flex;
   flex-direction: column;
 }
-.comic-book > .list-heroes > .card > .card-header > .thumbnail > .image.-rounded {
+.comic-book > .comic-heroes > .list-heroes > .card > .card-header > .thumbnail > .image.-rounded {
   border-radius: 4px;
 }
-.comic-book > .list-heroes > .card > .card-body {
+.comic-book > .comic-heroes > .list-heroes > .card > .card-body {
   display: flex;
   flex-flow: column;
   justify-content: end;
   text-align: center;
 }
-.comic-book > .list-heroes > .card > .card-body > .text {
+.comic-book > .comic-heroes > .list-heroes > .card > .card-body > .text {
   margin-top: -35px;
   padding-bottom: 7px;
   color: white;
@@ -96,28 +92,38 @@
   letter-spacing: 1px;
   font-weight: bold;
 }
-.comic-book > .list-heroes > .card > .card-body > .text.-ellipsis {
+.comic-book > .comic-heroes > .list-heroes > .card > .card-body > .text.-ellipsis {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.comic-book > .list-heroes.-scroll {
+@media (min-width: 768px) {
+  .comic-book > .comic-heroes > .list-heroes {
+    justify-content: normal;
+  }
+}
+.comic-book > .comic-heroes > .list-heroes.-scroll {
   max-height: 50vh;
   overflow-y: scroll;
 }
-
+.comic-book > .comic-heroes > .not-found__message {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+.comic-book > .comic-heroes > .loader {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
 @media (min-width: 768px) {
-  .comic-book {
-    width: 60vw;
+  .comic-book > .comic-heroes {
+    width: 83vw;
     margin: auto;
   }
-  .comic-book > .search-heroes {
-    width: 150px;
-  }
-  .comic-book .list-heroes {
-    justify-content: space-between;
-  }
 }
+
 .marvel-hero > .loader {
   font-size: 20px;
   font-weight: bold;
@@ -163,24 +169,41 @@
   text-align: center;
 }
 .marvel-hero > .hero-content > .heroes-hero > .hero-body > .subtitle {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.marvel-hero > .hero-content > .heroes-hero > .hero-body > .subtitle > .text {
   margin-top: 36px;
   color: #6f42c1;
   font-weight: 600;
 }
-.marvel-hero > .hero-content > .heroes-hero > .hero-body > .subtitle::after {
+.marvel-hero > .hero-content > .heroes-hero > .hero-body > .subtitle > .text::after {
   display: block;
   content: "";
   border: 2.4px solid #6f42c1;
   margin: auto;
   width: 154px;
 }
+.marvel-hero > .hero-content > .heroes-hero > .hero-body > .subtitle > .back-router {
+  text-decoration: auto;
+  text-align: end;
+  font-size: 13px;
+  padding: 10px 38px;
+  color: #6f42c1;
+}
+@media (min-width: 768px) {
+  .marvel-hero > .hero-content > .heroes-hero > .hero-body > .subtitle > .back-router {
+    font-size: 15px;
+  }
+}
 .marvel-hero > .hero-content > .heroes-hero > .hero-body > .list-comics {
   margin-top: 20px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 .marvel-hero > .hero-content > .heroes-hero > .hero-body > .list-comics > .card {
+  padding: 2px 4px;
   display: flex;
   flex-direction: column;
 }
@@ -210,6 +233,12 @@
 .marvel-hero > .hero-content > .heroes-hero > .hero-body > .list-comics.-scroll {
   max-height: 50vh;
   overflow-y: scroll;
+}
+.marvel-hero > .hero-content > .heroes-hero > .hero-body > .router-back {
+  font-family: monospace;
+  font-size: 14px;
+  color: #0d6efd;
+  font-weight: bold;
 }
 
 @media (max-width: 767.92px) {
