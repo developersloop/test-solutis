@@ -6,8 +6,12 @@
 		.factory('marvelService', function ($http, API_SERVICE) {
 			const apiService = {}
 
-			apiService.characters = function () {
-				return $http.get(`${API_SERVICE.base_path}/characters?ts=${API_SERVICE.ts}&apikey=${API_SERVICE.apiKey}&hash=${API_SERVICE.hash}`)
+			apiService.characters = function (name) {
+				let querySearch = name
+					? `&name=${name}`
+					: null
+					
+				return $http.get(`${API_SERVICE.base_path}/characters?limit=100${querySearch}&ts=${API_SERVICE.ts}&apikey=${API_SERVICE.apiKey}&hash=${API_SERVICE.hash}`)
 			}
 
 			apiService.character = function (characterId) {

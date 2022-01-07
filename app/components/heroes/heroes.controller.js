@@ -16,9 +16,9 @@
 		$scope.hero = null
 		$scope.comics = null
 		$scope.showMessageNotFound = false
+		$scope.heroes = []
 
 		var vm = this
-		vm.heroes = []
 		vm.loading = false
 
 		setTimeout(() => {
@@ -28,18 +28,18 @@
 			}
 		}, 500);
 
-		$scope.customFilter = function(value) {
-			if ($scope.search) return value.name.toLowerCase().includes($scope.search.toLowerCase());
-			else return []
-		}
+		$scope.$watch("search",function(newValue){
+			getHeroes(newValue)
+		});
+
 		$scope.goTo = function(heroId) {
 			$state.go("hero", { heroeId: heroId })
 		}
-		function getHeroes() {
+		function getHeroes(terms = null) {
 			vm.loading = true
-			marvelService.characters()
+			marvelService.characters(terms)
 				.then(response => {
-					vm.heroes = [...response.data.data.results]
+					$scope.heroes = [...response.data.data.results]
 				})
 				.finally(() => vm.loading = false)
 		}
