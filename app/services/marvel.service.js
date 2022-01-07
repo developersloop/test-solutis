@@ -8,9 +8,9 @@
 
 			apiService.characters = function (name) {
 				let querySearch = name
-					? `&name=${name}`
+					? `&nameStartsWith=${name}`
 					: null
-					
+
 				return $http.get(`${API_SERVICE.base_path}/characters?limit=100${querySearch}&ts=${API_SERVICE.ts}&apikey=${API_SERVICE.apiKey}&hash=${API_SERVICE.hash}`)
 			}
 
