@@ -24,10 +24,15 @@
     "angular-ui-router": "^1.0.30",
     "bootstrap-icons": "^1.7.2",
     "express": "^4.17.2",
+    "karma": "^6.3.17",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-cli": "^2.0.0",
+    "karma-jasmine": "^4.0.1",
     "sass": "^1.45.0",
     "serve-static": "^1.14.2"
   },
   "devDependencies": {
+    "angular-mocks": "^1.8.2",
     "node-sass": "^7.0.0"
   }
 }

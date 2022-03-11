@@ -28,9 +28,9 @@
 		// 	}
 		// }, 500);
 
-		$scope.$watch("search",function(newValue){
-			getHeroes(newValue)
-		});
+		// $scope.$watch("search",function(newValue){
+		// 	getHeroes(newValue)
+		// });
 
 		$scope.goTo = function(heroId) {
 			$state.go("hero", { heroeId: heroId })
@@ -57,7 +57,7 @@
 		}
 		$scope.mounted = function() {
 			getHeroes()
-			fetchHero()
+			// fetchHero()
 		}
 	}
 })()
